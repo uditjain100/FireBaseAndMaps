@@ -29,7 +29,12 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(v: View?) {
                 startActivity(Intent(this@MainActivity, MapsActivity::class.java))
             }
+        })
 
+        fragment_btn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                startActivity(Intent(this@MainActivity, Fragmentactivity::class.java))
+            }
         })
 
 

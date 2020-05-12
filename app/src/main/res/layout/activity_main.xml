@@ -55,15 +55,22 @@
         android:id="@+id/btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="btn"
-        />
+        android:layout_gravity="center"
+        android:text="btn" />
 
     <Button
         android:id="@+id/google_map_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Map"
-        />
+        android:layout_gravity="center"
+        android:text="Map" />
+
+    <Button
+        android:id="@+id/fragment_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Fragment" />
 
 
 </LinearLayout>
