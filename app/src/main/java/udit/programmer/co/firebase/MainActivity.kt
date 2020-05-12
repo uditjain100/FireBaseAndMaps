@@ -43,6 +43,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        view_pager_btn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                startActivity(Intent(this@MainActivity, ViewPagerActivity::class.java))
+            }
+        })
+
         btn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
 
