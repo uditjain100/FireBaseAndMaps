@@ -8,6 +8,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
+import udit.programmer.co.firebase.RoomDatabase.RoomActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -46,6 +47,12 @@ class MainActivity : AppCompatActivity() {
         view_pager_btn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 startActivity(Intent(this@MainActivity, ViewPagerActivity::class.java))
+            }
+        })
+
+        room_btn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                startActivity(Intent(this@MainActivity, RoomActivity::class.java))
             }
         })
 

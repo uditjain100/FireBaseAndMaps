@@ -14,10 +14,7 @@ import android.provider.Settings
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.location.LocationResult
-import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.*
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -83,9 +80,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     @SuppressLint("MissingPermission")
     private fun setUpLocationListener() {
-
         var random = Random()
-
         var fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         var locationRequest = LocationRequest()
             .setInterval(2000)
@@ -138,12 +133,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //
 //        l?.let {
 //            if (::mMap.isInitialized) {
-//                val current = LatLng(it.longitude, it.latitude)
+//                val current = LatLng(it.latitude, it.longitude)
 //                mMap.addMarker(MarkerOptions().position(current).title("Current Location"))
 //                mMap.moveCamera(CameraUpdateFactory.newLatLng(current))
 //            }
 //        }
-//
 //    }
 
     private fun isFineLocationGranted(): Boolean {

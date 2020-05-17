@@ -86,4 +86,11 @@
         android:layout_gravity="center"
         android:text="View Pager" />
 
+    <Button
+        android:id="@+id/room_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Room" />
+
 </LinearLayout>
