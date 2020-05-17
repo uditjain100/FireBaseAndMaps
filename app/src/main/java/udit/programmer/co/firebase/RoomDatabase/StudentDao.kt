@@ -20,7 +20,7 @@ interface StudentDao {
     fun delete(student: Student)
 
     @Query("SELECT * FROM Student")
-    fun getAllStudents(): List<Student>
+    fun getAllStudents(): LiveData<List<Student>>
 
     @Query("SELECT * FROM Student WHERE age >= :age")
     fun getStudentsWithAge(age: Int): List<Student>
