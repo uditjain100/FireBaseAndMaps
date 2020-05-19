@@ -56,6 +56,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        camera_btn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                startActivity(Intent(this@MainActivity, CameraActivity::class.java))
+            }
+        })
+
         btn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
 
