@@ -8,7 +8,14 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
+import udit.programmer.co.firebase.Camera.CameraActivity
+import udit.programmer.co.firebase.FireBase.User
+import udit.programmer.co.firebase.Fragments.Fragmentactivity
+import udit.programmer.co.firebase.Maps.MapsActivity
+import udit.programmer.co.firebase.Notifications.NotificationActivity
 import udit.programmer.co.firebase.RoomDatabase.RoomActivity
+import udit.programmer.co.firebase.ViewPager.ViewPagerActivity
+import udit.programmer.co.firebase.WorkManager.WorkManagerActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -62,6 +69,12 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
+        worker_btn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                startActivity(Intent(this@MainActivity, WorkManagerActivity::class.java))
+            }
+        })
+
         btn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
 
@@ -104,8 +117,5 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-
     }
-
-
 }

@@ -1,4 +1,4 @@
-package udit.programmer.co.firebase
+package udit.programmer.co.firebase.Notifications
 
 import android.app.Notification
 import android.app.NotificationChannel
@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.NotificationCompat
 import kotlinx.android.synthetic.main.activity_notification.*
+import udit.programmer.co.firebase.R
 
 class NotificationActivity : AppCompatActivity() {
 

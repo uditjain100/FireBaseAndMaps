@@ -7,7 +7,7 @@
     android:layout_margin="20dp"
     android:orientation="vertical"
     android:weightSum="2"
-    tools:context=".Fragmentactivity">
+    tools:context=".Fragments.Fragmentactivity">
 
 
     <LinearLayout

@@ -1,11 +1,11 @@
-package udit.programmer.co.firebase
+package udit.programmer.co.firebase.Fragments
 
-import android.graphics.Movie
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import kotlinx.android.synthetic.main.item_layout.view.*
+import udit.programmer.co.firebase.R
 
 class MovieAdapter(val list: ArrayList<String>) : BaseAdapter() {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {

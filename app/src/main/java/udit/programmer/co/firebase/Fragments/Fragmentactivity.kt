@@ -1,8 +1,9 @@
-package udit.programmer.co.firebase
+package udit.programmer.co.firebase.Fragments
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_fragmentactivity.*
+import udit.programmer.co.firebase.R
 
 class Fragmentactivity : AppCompatActivity() {
 

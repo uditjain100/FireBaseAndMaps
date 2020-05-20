@@ -1,4 +1,4 @@
-package udit.programmer.co.firebase
+package udit.programmer.co.firebase.Camera
 
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +15,7 @@ import com.google.firebase.ml.vision.FirebaseVision
 import com.google.firebase.ml.vision.common.FirebaseVisionImage
 import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata
 import kotlinx.android.synthetic.main.activity_camera.*
+import udit.programmer.co.firebase.R
 import java.io.File
 import java.util.concurrent.Executor
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    tools:context=".ViewPagerActivity">
+    tools:context=".ViewPager.ViewPagerActivity">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"

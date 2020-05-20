@@ -1,8 +1,10 @@
-package udit.programmer.co.firebase
+package udit.programmer.co.firebase.ViewPager
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_view_pager.*
+import udit.programmer.co.firebase.Fragments.MovieFragment
+import udit.programmer.co.firebase.R
 
 class ViewPagerActivity : AppCompatActivity() {
 
@@ -15,7 +17,8 @@ class ViewPagerActivity : AppCompatActivity() {
         var fragment = MovieFragment()
         fragment.arguments = bundle
 
-        var viewPagerAdapter = ViewPageAdapter(supportFragmentManager)
+        var viewPagerAdapter =
+            ViewPageAdapter(supportFragmentManager)
         viewPagerAdapter.apply {
             add(fragment)
             //add(fragment)

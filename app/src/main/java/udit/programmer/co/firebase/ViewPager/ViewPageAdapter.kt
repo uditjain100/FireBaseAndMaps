@@ -1,4 +1,4 @@
-package udit.programmer.co.firebase
+package udit.programmer.co.firebase.ViewPager
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

@@ -1,11 +1,10 @@
-package udit.programmer.co.firebase
+package udit.programmer.co.firebase.Maps
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.location.Location
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,8 +22,8 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
+import udit.programmer.co.firebase.R
 import java.util.*
-import java.util.jar.Manifest
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
@@ -196,7 +195,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
         mMap.addPolyline(
             PolylineOptions().add(sydney, LatLng(20.59, 78.39))
-                .color(ContextCompat.getColor(baseContext, R.color.colorPrimary))
+                .color(ContextCompat.getColor(baseContext,
+                    R.color.colorPrimary
+                ))
         ).width = 2f
     }
 }

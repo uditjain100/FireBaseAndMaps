@@ -19,11 +19,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CameraActivity"></activity>
+        <activity android:name=".WorkManager.WorkManagerActivity"></activity>
+        <activity android:name=".Camera.CameraActivity" />
         <activity android:name=".RoomDatabase.RoomActivity" />
-        <activity android:name=".ViewPagerActivity" />
-        <activity android:name=".NotificationActivity" />
-        <activity android:name=".Fragmentactivity" />
+        <activity android:name=".ViewPager.ViewPagerActivity" />
+        <activity android:name=".Notifications.NotificationActivity" />
+        <activity android:name=".Fragments.Fragmentactivity" />
         <activity android:name=".Networking_Activity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -38,7 +39,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".Maps.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".MainActivity">
             <intent-filter>

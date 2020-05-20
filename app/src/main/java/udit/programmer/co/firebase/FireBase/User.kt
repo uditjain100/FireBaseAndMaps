@@ -1,4 +1,4 @@
-package udit.programmer.co.firebase
+package udit.programmer.co.firebase.FireBase
 
 class User(
     var name: String,
