@@ -1,20 +1,27 @@
 package udit.programmer.co.firebase
 
 import android.content.pm.PackageManager
-import android.opengl.Matrix
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.HandlerThread
 import android.util.Log
 import android.util.Rational
 import android.view.Surface
 import android.view.ViewGroup
 import androidx.camera.core.*
 import androidx.core.app.ActivityCompat
+import com.google.firebase.ml.vision.FirebaseVision
+import com.google.firebase.ml.vision.common.FirebaseVisionImage
+import com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata
 import kotlinx.android.synthetic.main.activity_camera.*
 import java.io.File
-import java.util.jar.Manifest
+import java.util.concurrent.Executor
 
-class CameraActivity : AppCompatActivity() {
+class CameraActivity : AppCompatActivity(), Executor {
+    override fun execute(command: Runnable) {
+        command.run()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +46,25 @@ class CameraActivity : AppCompatActivity() {
     }
 
     private fun setCamera() {
+
+        val analyzerConfig = ImageAnalysisConfig.Builder().apply {
+            val thread = HandlerThread("Label").apply {
+                start()
+            }
+            setCallbackHandler(
+                Handler(thread.looper)
+            )
+
+            setImageReaderMode(ImageAnalysis.ImageReaderMode.ACQUIRE_LATEST_IMAGE)
+        }.build()
+
+//        val analyzerConfig = ImageAnalysisConfig.Builder().apply {
+//            setImageReaderMode(ImageAnalysis.ImageReaderMode.ACQUIRE_LATEST_IMAGE)
+//        }
+
+        val analyzerCase = ImageAnalysis(analyzerConfig).apply {
+            setAnalyzer(LabelAnalyzer())
+        }
 
         val imageCaptureConfig = ImageCaptureConfig.Builder().apply {
             setTargetAspectRatio(Rational.POSITIVE_INFINITY)
@@ -78,6 +104,7 @@ class CameraActivity : AppCompatActivity() {
             texture_layout.surfaceTexture = it.surfaceTexture
         }
         CameraX.bindToLifecycle(this, preview, imageCapture)
+
     }
 
     private fun updateCamera() {
@@ -93,5 +120,49 @@ class CameraActivity : AppCompatActivity() {
         }
         matrix.postRotate(rotationDegree.toFloat(), centerX, centerY)
         texture_layout.setTransform(matrix)
+    }
+
+    inner class LabelAnalyzer : ImageAnalysis.Analyzer {
+        override fun analyze(image: ImageProxy, rotationDegrees: Int) {
+            val x = image.planes[0]
+            val y = image.planes[1]
+            val z = image.planes[2]
+
+            val xb = x.buffer.remaining()
+            val yb = y.buffer.remaining()
+            val zb = z.buffer.remaining()
+
+            val data = ByteArray(xb + yb + zb)
+
+            x.buffer.get(data, 0, xb)
+            y.buffer.get(data, xb, yb)
+            z.buffer.get(data, xb + yb, zb)
+
+            val result: Int = when (rotationDegrees) {
+                0 -> FirebaseVisionImageMetadata.ROTATION_0
+                90 -> FirebaseVisionImageMetadata.ROTATION_90
+                180 -> FirebaseVisionImageMetadata.ROTATION_180
+                270 -> FirebaseVisionImageMetadata.ROTATION_270
+                else -> FirebaseVisionImageMetadata.ROTATION_0
+            }
+
+            val metadata = FirebaseVisionImageMetadata.Builder()
+                .setFormat(FirebaseVisionImageMetadata.IMAGE_FORMAT_YV12)
+                .setHeight(image.height)
+                .setWidth(image.width)
+                .setRotation(result)
+                .build()
+
+            val labelImage = FirebaseVisionImage.fromByteArray(data, metadata)
+
+            FirebaseVision.getInstance().getOnDeviceImageLabeler()
+                .processImage(labelImage)
+                .addOnSuccessListener {
+                    if (it.isNotEmpty()) {
+                        tv.text = it[0].text + "  " + it[0].confidence
+                    }
+                }
+        }
+
     }
 }

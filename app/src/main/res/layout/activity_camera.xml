@@ -20,5 +20,12 @@
         android:layout_centerInParent="true"
         android:layout_marginBottom="50dp" />
 
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="500dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/capture_image"
+        />
+
 
 </RelativeLayout>
