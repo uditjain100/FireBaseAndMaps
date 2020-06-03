@@ -19,7 +19,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FireBase.FireBaseActivity"></activity>
+        <activity android:name=".Toolbar.CollapsingToolbarActivity"></activity>
+        <activity android:name=".Toolbar.ToolbarActivity" />
+        <activity android:name=".FireBase.FireBaseActivity" />
         <activity android:name=".MVVM.ui.view.MVVM_Activity" />
         <activity android:name=".WorkManager.WorkManagerActivity" />
         <activity android:name=".Camera.CameraActivity" />
