@@ -19,7 +19,7 @@ class ToolbarActivity : AppCompatActivity() {
         toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.refresh -> {
-                    Toast.makeText(this, "ToolBar Clicked", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Refresh Clicked", Toast.LENGTH_LONG).show()
                     true
                 }
                 else -> false

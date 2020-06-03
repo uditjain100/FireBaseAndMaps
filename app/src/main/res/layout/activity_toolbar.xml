@@ -9,11 +9,13 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbar_layout"
         android:layout_width="match_parent"
+        app:liftOnScroll="true"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/BlueViolet">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
+            app:layout_scrollFlags="scroll"
             style="@style/MaterialAlertDialog.MaterialComponents.Title.Icon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
