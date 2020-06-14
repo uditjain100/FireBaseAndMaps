@@ -16,6 +16,7 @@ import udit.programmer.co.firebase.MVVM.ui.view.MVVM_Activity
 import udit.programmer.co.firebase.Maps.MapsActivity
 import udit.programmer.co.firebase.Notifications.NotificationActivity
 import udit.programmer.co.firebase.RoomDatabase.RoomActivity
+import udit.programmer.co.firebase.Sensors.SensorsActivity
 import udit.programmer.co.firebase.Toolbar.ToolbarActivity
 import udit.programmer.co.firebase.ViewPager.ViewPagerActivity
 import udit.programmer.co.firebase.WorkManager.WorkManagerActivity
@@ -29,6 +30,12 @@ class MainActivity : AppCompatActivity() {
         toolbar_btn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 startActivity(Intent(this@MainActivity, ToolbarActivity::class.java))
+            }
+        })
+
+        sensor_btn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                startActivity(Intent(this@MainActivity, SensorsActivity::class.java))
             }
         })
 

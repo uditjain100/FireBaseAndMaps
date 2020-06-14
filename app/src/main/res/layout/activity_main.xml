@@ -80,4 +80,14 @@
         app:cornerRadius="25dp"
         app:rippleColor="@color/BlueViolet" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/sensor_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/Brown"
+        android:text="Sensor"
+        app:cornerRadius="25dp"
+        app:rippleColor="@color/BlueViolet" />
+
 </LinearLayout>

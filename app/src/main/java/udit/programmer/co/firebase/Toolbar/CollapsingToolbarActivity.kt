@@ -5,11 +5,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_collapsing_toolbar.*
-import kotlinx.android.synthetic.main.activity_view_pager.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import udit.programmer.co.firebase.R
