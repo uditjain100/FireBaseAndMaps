@@ -19,10 +19,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Sensors.AccelerometerActivity"></activity>
+        <activity android:name=".Sensors.OtherSensorsActivity"></activity>
+        <activity android:name=".Sensors.MagnetometerActivity" />
+        <activity android:name=".Sensors.GyroScopeActivity" />
+        <activity android:name=".Sensors.AccelerometerActivity" />
         <activity
             android:name=".Sensors.SensorsActivity"
-            android:label="@string/title_activity_sensors"></activity>
+            android:label="@string/title_activity_sensors" />
         <activity android:name=".Toolbar.CollapsingToolbarActivity" />
         <activity android:name=".Toolbar.ToolbarActivity" />
         <activity android:name=".FireBase.FireBaseActivity" />

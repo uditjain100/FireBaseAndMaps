@@ -30,6 +30,18 @@ class SensorsActivity : AppCompatActivity(), SensorEventListener {
             startActivity(Intent(this, AccelerometerActivity::class.java))
         }
 
+        gyroscope_btn.setOnClickListener {
+            startActivity(Intent(this, GyroScopeActivity::class.java))
+        }
+
+        magnetometer_btn.setOnClickListener {
+            startActivity(Intent(this, MagnetometerActivity::class.java))
+        }
+
+        other_btn.setOnClickListener {
+            startActivity(Intent(this, OtherSensorsActivity::class.java))
+        }
+
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         sensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_LIGHT)

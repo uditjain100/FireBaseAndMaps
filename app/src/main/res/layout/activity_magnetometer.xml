@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Sensors.AccelerometerActivity">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="40dp"
+        android:layout_centerHorizontal="true"
+        android:background="@color/Black"
+        android:text="Magnetometer values"
+        android:textAlignment="center"
+        android:textColor="@color/White"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/x_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:background="@color/Yellow"
+        android:text="X : "
+        android:textAlignment="center"
+        android:textColor="@color/Black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/y_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/x_tv"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:background="@color/SkyBlue"
+        android:text="Y : "
+        android:textAlignment="center"
+        android:textColor="@color/Black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/z_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/y_tv"
+        android:layout_centerInParent="true"
+        android:layout_margin="10dp"
+        android:background="@color/YellowGreen"
+        android:text="Z : "
+        android:textAlignment="center"
+        android:textColor="@color/Black"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
