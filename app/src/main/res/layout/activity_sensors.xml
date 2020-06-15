@@ -8,4 +8,27 @@
     tools:context=".Sensors.SensorsActivity"
     tools:deviceIds="wear">
 
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/accelerometer_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="40dp"
+        android:backgroundTint="@color/Chocolate"
+        android:text="Accelerometer"
+        app:cornerRadius="25dp" />
+
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Hello"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
 </RelativeLayout>

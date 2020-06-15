@@ -1,13 +1,17 @@
 package udit.programmer.co.firebase.Sensors
 
 import android.content.Context
+import android.content.Intent
+import android.graphics.Color
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_sensors.*
 import udit.programmer.co.firebase.R
 import java.lang.Exception
 
@@ -21,6 +25,11 @@ class SensorsActivity : AppCompatActivity(), SensorEventListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sensors)
+
+        accelerometer_btn.setOnClickListener {
+            startActivity(Intent(this, AccelerometerActivity::class.java))
+        }
+
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         sensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_LIGHT)
@@ -40,10 +49,12 @@ class SensorsActivity : AppCompatActivity(), SensorEventListener {
         if (event!!.values[0] > 30 && !isRunning) {
             isRunning = true
             try {
-                mp = MediaPlayer()
-                mp!!.setDataSource("https://s1.vocaroo.com/media/download_temp/Vocaroo_s1IgjP1TWkrt.mp3")
-                mp!!.prepare()
-                mp!!.start()
+//                mp = MediaPlayer()
+//                mp!!.setDataSource("https://s1.vocaroo.com/media/download_temp/Vocaroo_s1IgjP1TWkrt.mp3")
+//                mp!!.prepare()
+//                mp!!.start()
+                tv.setBackgroundColor(Color.RED)
+                Toast.makeText(this, "Brightness Increases", Toast.LENGTH_LONG).show()
             } catch (e: Exception) {
 
             }
