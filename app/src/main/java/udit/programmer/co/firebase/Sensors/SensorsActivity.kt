@@ -58,7 +58,7 @@ class SensorsActivity : AppCompatActivity(), SensorEventListener {
     }
 
     override fun onSensorChanged(event: SensorEvent?) {
-        if (event!!.values[0] > 30 && !isRunning) {
+        if (event!!.values[0] > 100 && !isRunning) {
             isRunning = true
             try {
 //                mp = MediaPlayer()

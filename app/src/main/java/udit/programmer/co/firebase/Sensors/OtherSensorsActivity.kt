@@ -25,19 +25,34 @@ class OtherSensorsActivity : AppCompatActivity(), SensorEventListener {
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
-        pressureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE)
-        temperatureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE)
-        humiditySensor = sensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY)
-
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE) == null) {
+            pressure_value_tv.text = "Pressure Sensor Not Supported"
+        } else {
+            pressureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE)
+            sensorManager.registerListener(this, pressureSensor, SensorManager.SENSOR_DELAY_NORMAL)
+        }
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE) == null) {
+            temp_value_tv.text = "Temperature Sensor Not Supported"
+        } else {
+            temperatureSensor = sensorManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE)
+            sensorManager.registerListener(
+                this,
+                temperatureSensor,
+                SensorManager.SENSOR_DELAY_NORMAL
+            )
+        }
+        if (sensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY) == null) {
+            humidity_value_tv.text = "Humidity Sensor Not Supported"
+        } else {
+            humiditySensor = sensorManager.getDefaultSensor(Sensor.TYPE_RELATIVE_HUMIDITY)
+            sensorManager.registerListener(this, humiditySensor, SensorManager.SENSOR_DELAY_NORMAL)
+        }
     }
 
 
     override fun onResume() {
         super.onResume()
         sensorManager.registerListener(this, lightSensor, SensorManager.SENSOR_DELAY_NORMAL)
-        sensorManager.registerListener(this, pressureSensor, SensorManager.SENSOR_DELAY_NORMAL)
-        sensorManager.registerListener(this, temperatureSensor, SensorManager.SENSOR_DELAY_NORMAL)
-        sensorManager.registerListener(this, humiditySensor, SensorManager.SENSOR_DELAY_NORMAL)
     }
 
     override fun onPause() {
