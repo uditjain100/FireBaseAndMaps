@@ -52,7 +52,13 @@ class AccelerometerActivity : AppCompatActivity(), SensorEventListener {
         y_tv.text = "Y : $y"
         z_tv.text = "Z : $z"
 
-        sufflingWork(x, y, z)
+        accelerometer_layout.setBackgroundColor(Color.rgb(
+            (((x+12)/24) * 255).toInt(),
+            (((y+12)/24) * 255).toInt(),
+            (((z+12)/24) * 255).toInt()
+        ))
+
+        //sufflingWork(x, y, z)
     }
 
     private fun sufflingWork(x: Float, y: Float, z: Float) {
