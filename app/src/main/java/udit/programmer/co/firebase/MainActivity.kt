@@ -12,6 +12,7 @@ import udit.programmer.co.firebase.Camera.CameraActivity
 import udit.programmer.co.firebase.FireBase.FireBaseActivity
 import udit.programmer.co.firebase.FireBase.User
 import udit.programmer.co.firebase.Fragments.Fragmentactivity
+import udit.programmer.co.firebase.Layout.LayoutActivity
 import udit.programmer.co.firebase.MVVM.ui.view.MVVM_Activity
 import udit.programmer.co.firebase.Maps.MapsActivity
 import udit.programmer.co.firebase.Notifications.NotificationActivity
@@ -26,6 +27,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        back_btn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                startActivity(Intent(this@MainActivity, LayoutActivity::class.java))
+            }
+        })
 
         toolbar_btn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {

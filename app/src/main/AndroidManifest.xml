@@ -21,7 +21,7 @@
         android:name="android.hardware.sensor.humidity"
         android:required="true" />
 
-    <uses-permission android:name="android.permission.BODY_SENSORS"/>
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -30,12 +30,15 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_baseline_tag_faces_24"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_baseline_tag_faces_24"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Sensors.OtherSensorsActivity"></activity>
+        <activity
+            android:name=".Layout.LayoutActivity"
+            android:theme="@style/AppTheme2"></activity>
+        <activity android:name=".Sensors.OtherSensorsActivity" />
         <activity android:name=".Sensors.MagnetometerActivity" />
         <activity android:name=".Sensors.GyroScopeActivity" />
         <activity android:name=".Sensors.AccelerometerActivity" />
