@@ -17,6 +17,7 @@ import udit.programmer.co.firebase.MVVM.ui.view.MVVM_Activity
 import udit.programmer.co.firebase.Maps.MapsActivity
 import udit.programmer.co.firebase.Notifications.NotificationActivity
 import udit.programmer.co.firebase.RoomDatabase.RoomActivity
+import udit.programmer.co.firebase.Search.SearchActivity
 import udit.programmer.co.firebase.Sensors.SensorsActivity
 import udit.programmer.co.firebase.Toolbar.ToolbarActivity
 import udit.programmer.co.firebase.ViewPager.ViewPagerActivity
@@ -27,6 +28,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        search_btn.setOnClickListener {
+            startActivity(Intent(this@MainActivity, SearchActivity::class.java))
+        }
+
 
         back_btn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {

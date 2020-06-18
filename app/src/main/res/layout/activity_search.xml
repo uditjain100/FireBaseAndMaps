@@ -1,9 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="40dp"
+    android:orientation="vertical"
     tools:context=".Search.SearchActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.mancj.materialsearchbar.MaterialSearchBar
+        android:id="@+id/search_bar"
+        style="@style/MaterialSearchBarDark"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/White"
+        app:mt_hint="Custom Hint"
+        app:mt_maxSuggestionsCount="10"
+        app:mt_speechMode="true" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <RadioButton
+            android:id="@+id/rdi_youtube"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:buttonTint="@color/BurlyWood"
+            android:checked="true"
+            android:text="YouTube"
+            android:textColor="@color/Black" />
+
+        <RadioButton
+            android:id="@+id/rdi_google"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:buttonTint="@color/YellowGreen"
+            android:checked="true"
+            android:text="Google"
+            android:textColor="@color/Black" />
+
+    </RadioGroup>
+
+</LinearLayout>
