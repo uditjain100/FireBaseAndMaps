@@ -8,6 +8,7 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_other_sensors.*
 import udit.programmer.co.firebase.R
 
@@ -25,6 +26,12 @@ class OtherSensorsActivity : AppCompatActivity(), SensorEventListener {
 
         sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
         lightSensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT)
+
+        var list = sensorManager.getSensorList(Sensor.TYPE_ALL)
+        for (l in list) {
+            Log.d("Ceased Meteor", "$l")
+        }
+
         if (sensorManager.getDefaultSensor(Sensor.TYPE_PRESSURE) == null) {
             pressure_value_tv.text = "Pressure Sensor Not Supported"
         } else {

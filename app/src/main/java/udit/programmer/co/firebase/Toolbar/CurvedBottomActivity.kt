@@ -4,20 +4,15 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import kotlinx.android.synthetic.main.activity_bottom.*
+import kotlinx.android.synthetic.main.activity_curved_bottom.*
 import udit.programmer.co.firebase.Adapter.MovieAdapter
 import udit.programmer.co.firebase.Adapter.MovieOnItemClickListener
 import udit.programmer.co.firebase.Adapter.Movies
 import udit.programmer.co.firebase.R
 
-class BottomActivity : AppCompatActivity() {
+class CurvedBottomActivity : AppCompatActivity() {
 
     val moviesn = arrayOf(
         "Superman and the Mole Men",
@@ -147,13 +142,12 @@ class BottomActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_bottom)
+        setContentView(R.layout.activity_curved_bottom)
 
         for (i in 0..31) {
             list.add(Movies(moviesn[i], years[i], images[i], links[i], posi[i]))
         }
-
-        rv.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        rv_lay.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         val na = MovieAdapter(list)
         na.onItemClickListener = object : MovieOnItemClickListener {
             override fun onClick(movie: Movies) {
@@ -161,35 +155,6 @@ class BottomActivity : AppCompatActivity() {
                 startActivity(Intent.createChooser(i, "Select Browser"))
             }
         }
-        rv.adapter = na
-        val btmNavView: BottomNavigationView = findViewById(R.id.btm_nav_view)
-
-        val navBtmController = findNavController(R.id.nav_bottom_host_fragment)
-        val appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.btm_navigation_home, R.id.btm_navigation_dashboard, R.id.btm_navigation_notifications))
-        setupActionBarWithNavController(navBtmController, appBarConfiguration)
-        btmNavView.setupWithNavController(navBtmController)
-
-//        btm_nav_view.setOnNavigationItemSelectedListener {
-//            when (it.itemId) {
-//                R.id.nav_home_bottom -> Snackbar.make(
-//                    container,
-//                    "SnackBar Appeared one",
-//                    Snackbar.LENGTH_LONG
-//                ).show()
-//                R.id.nav_two_bottom -> Snackbar.make(
-//                    container,
-//                    "SnackBar Appeared two",
-//                    Snackbar.LENGTH_LONG
-//                ).show()
-//                R.id.nav_three_bottom -> Snackbar.make(
-//                    container,
-//                    "SnackBar Appeared three",
-//                    Snackbar.LENGTH_LONG
-//                ).show()
-//            }
-//            true
-//        }
-
+        rv_lay.adapter = na
     }
 }

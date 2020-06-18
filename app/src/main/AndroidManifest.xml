@@ -35,7 +35,10 @@
         android:roundIcon="@drawable/ic_baseline_tag_faces_24"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Toolbar.BottomActivity"></activity>
+        <activity android:name=".Search.SearchActivity"></activity>
+        <activity android:name=".Toolbar.CurvedBottomActivity" />
+        <activity android:name=".Toolbar.BottomActivity"
+            android:theme="@style/AppTheme3"/>
         <activity
             android:name=".Layout.LayoutActivity"
             android:theme="@style/AppTheme2" />

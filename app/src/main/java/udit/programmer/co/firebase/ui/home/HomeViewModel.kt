@@ -1,4 +1,4 @@
-package udit.programmer.co.quizapp.ui.home
+package udit.programmer.co.firebase.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
