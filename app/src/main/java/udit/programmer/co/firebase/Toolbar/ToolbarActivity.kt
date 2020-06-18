@@ -37,5 +37,16 @@ class ToolbarActivity : AppCompatActivity() {
             }
         })
 
+        btm_btn.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                startActivity(
+                    Intent(
+                        this@ToolbarActivity,
+                        BottomActivity::class.java
+                    )
+                )
+            }
+        })
+
     }
 }

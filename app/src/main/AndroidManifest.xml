@@ -35,9 +35,10 @@
         android:roundIcon="@drawable/ic_baseline_tag_faces_24"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Toolbar.BottomActivity"></activity>
         <activity
             android:name=".Layout.LayoutActivity"
-            android:theme="@style/AppTheme2"></activity>
+            android:theme="@style/AppTheme2" />
         <activity android:name=".Sensors.OtherSensorsActivity" />
         <activity android:name=".Sensors.MagnetometerActivity" />
         <activity android:name=".Sensors.GyroScopeActivity" />
