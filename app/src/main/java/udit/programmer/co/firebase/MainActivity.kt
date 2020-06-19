@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
 import udit.programmer.co.firebase.Camera.CameraActivity
+import udit.programmer.co.firebase.Camera.FaceActivity
 import udit.programmer.co.firebase.FireBase.FireBaseActivity
 import udit.programmer.co.firebase.FireBase.User
 import udit.programmer.co.firebase.Fragments.Fragmentactivity
@@ -33,6 +34,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, SearchActivity::class.java))
         }
 
+        firebase_storage_btn.setOnClickListener {
+            startActivity(Intent(this@MainActivity, FaceActivity::class.java))
+        }
 
         back_btn.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {

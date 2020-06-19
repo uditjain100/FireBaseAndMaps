@@ -47,7 +47,6 @@ class CameraActivity : AppCompatActivity(), Executor {
     }
 
     private fun setCamera() {
-
         val analyzerConfig = ImageAnalysisConfig.Builder().apply {
             val thread = HandlerThread("Label").apply {
                 start()
@@ -71,9 +70,7 @@ class CameraActivity : AppCompatActivity(), Executor {
             setTargetAspectRatio(Rational.POSITIVE_INFINITY)
             setCaptureMode(ImageCapture.CaptureMode.MAX_QUALITY)
         }.build()
-
         val imageCapture = ImageCapture(imageCaptureConfig)
-
         capture_image.setOnClickListener {
             val file = File(externalMediaDirs.first(), "${System.currentTimeMillis()}.jpg")
             imageCapture.takePicture(file, object : ImageCapture.OnImageSavedListener {
@@ -88,7 +85,6 @@ class CameraActivity : AppCompatActivity(), Executor {
                 ) {
                     Log.i("IMAGE CAPTURED", "Error in Capturing")
                 }
-
             })
         }
 
@@ -104,6 +100,7 @@ class CameraActivity : AppCompatActivity(), Executor {
             updateCamera()
             texture_layout.surfaceTexture = it.surfaceTexture
         }
+
         CameraX.bindToLifecycle(this, preview, imageCapture)
 
     }
@@ -166,4 +163,5 @@ class CameraActivity : AppCompatActivity(), Executor {
         }
 
     }
+
 }
