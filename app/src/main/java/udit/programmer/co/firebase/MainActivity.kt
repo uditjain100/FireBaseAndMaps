@@ -3,15 +3,10 @@ package udit.programmer.co.firebase
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import com.google.android.material.snackbar.Snackbar
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_main.*
-import udit.programmer.co.firebase.Camera.CameraActivity
-import udit.programmer.co.firebase.Camera.FaceActivity
+import udit.programmer.co.firebase.FireBase.AuthenticatedActivity
 import udit.programmer.co.firebase.FireBase.FireBaseActivity
-import udit.programmer.co.firebase.FireBase.User
+import udit.programmer.co.firebase.FireBase.SignInActivity
 import udit.programmer.co.firebase.Fragments.Fragmentactivity
 import udit.programmer.co.firebase.Layout.LayoutActivity
 import udit.programmer.co.firebase.MVVM.ui.view.MVVM_Activity
@@ -30,85 +25,116 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        sign_in_btn.setOnClickListener {
+            startActivity(Intent(this@MainActivity, SignInActivity::class.java))
+        }
+
+        phone_btn.setOnClickListener {
+            startActivity(Intent(this@MainActivity, AuthenticatedActivity::class.java))
+        }
+
         search_btn.setOnClickListener {
             startActivity(Intent(this@MainActivity, SearchActivity::class.java))
         }
 
-        firebase_storage_btn.setOnClickListener {
-            startActivity(Intent(this@MainActivity, FaceActivity::class.java))
+        back_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    LayoutActivity::class.java
+                )
+            )
         }
 
-        back_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(Intent(this@MainActivity, LayoutActivity::class.java))
-            }
-        })
+        toolbar_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    ToolbarActivity::class.java
+                )
+            )
+        }
 
-        toolbar_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(Intent(this@MainActivity, ToolbarActivity::class.java))
-            }
-        })
+        sensor_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    SensorsActivity::class.java
+                )
+            )
+        }
 
-        sensor_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(Intent(this@MainActivity, SensorsActivity::class.java))
-            }
-        })
+        google_map_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    MapsActivity::class.java
+                )
+            )
+        }
 
-        google_map_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(Intent(this@MainActivity, MapsActivity::class.java))
-            }
-        })
+        fragment_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    Fragmentactivity::class.java
+                )
+            )
+        }
 
-        fragment_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(Intent(this@MainActivity, Fragmentactivity::class.java))
-            }
-        })
+        notification_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    NotificationActivity::class.java
+                )
+            )
+        }
 
-        notification_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(Intent(this@MainActivity, NotificationActivity::class.java))
-            }
-        })
+        view_pager_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    ViewPagerActivity::class.java
+                )
+            )
+        }
 
-        view_pager_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(Intent(this@MainActivity, ViewPagerActivity::class.java))
-            }
-        })
+        room_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    RoomActivity::class.java
+                )
+            )
+        }
 
-        room_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(Intent(this@MainActivity, RoomActivity::class.java))
-            }
-        })
+        mvvm_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    MVVM_Activity::class.java
+                )
+            )
+        }
 
-        mvvm_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(Intent(this@MainActivity, MVVM_Activity::class.java))
-            }
-        })
+        worker_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    WorkManagerActivity::class.java
+                )
+            )
+        }
 
-        camera_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(Intent(this@MainActivity, CameraActivity::class.java))
-            }
-        })
-
-        worker_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(Intent(this@MainActivity, WorkManagerActivity::class.java))
-            }
-        })
-
-        firebase_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(Intent(this@MainActivity, FireBaseActivity::class.java))
-            }
-        })
+        firebase_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@MainActivity,
+                    FireBaseActivity::class.java
+                )
+            )
+        }
 
     }
 }

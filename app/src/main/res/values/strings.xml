@@ -10,4 +10,7 @@
     values-round/strings.xml for round devices.
     -->
     <string name="hello_world">Hello Square World!</string>
+    <string name="facebook_application_id" translatable="false">3931215776950542</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb3931215776950542</string>
+
 </resources>

@@ -5,6 +5,8 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="textInputStyle">@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox
+        </item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -20,5 +22,9 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme4" parent="AppTheme">
+        <item name="android:windowBackground">@color/White</item>
     </style>
 </resources>

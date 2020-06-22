@@ -35,13 +35,10 @@
         android:roundIcon="@drawable/ic_baseline_tag_faces_24"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Camera.FaceActivity">
-            <meta-data
-                android:name="com.google.firebase.ml.vision.DEPENDENCIES"
-                android:value="ocr" />
-        </activity>
+        <activity android:name=".FireBase.SignInActivity"></activity>
+        <activity android:name=".FireBase.AuthenticatedActivity" />
+        <activity android:name=".FireBase.PhoneActivity" />
         <activity android:name=".Search.SearchActivity" />
-        <activity android:name=".Toolbar.CurvedBottomActivity" />
         <activity
             android:name=".Toolbar.BottomActivity"
             android:theme="@style/AppTheme3" />
@@ -56,24 +53,16 @@
             android:name=".Sensors.SensorsActivity"
             android:label="@string/title_activity_sensors" />
         <activity android:name=".Toolbar.CollapsingToolbarActivity" />
+        <activity android:name=".Toolbar.ScrollActivity" />
         <activity android:name=".Toolbar.ToolbarActivity" />
         <activity android:name=".FireBase.FireBaseActivity" />
         <activity android:name=".MVVM.ui.view.MVVM_Activity" />
         <activity android:name=".WorkManager.WorkManagerActivity" />
-        <activity android:name=".Camera.CameraActivity" />
         <activity android:name=".RoomDatabase.RoomActivity" />
         <activity android:name=".ViewPager.ViewPagerActivity" />
         <activity android:name=".Notifications.NotificationActivity" />
         <activity android:name=".Fragments.Fragmentactivity" />
-        <activity android:name=".Networking_Activity" />
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />

@@ -80,4 +80,7 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
     implementation 'com.github.mancj:MaterialSearchBar:0.8.2'
     implementation 'com.github.d-max:spots-dialog:1.1@aar'
+    implementation 'com.github.Trendyol:BubbleScrollBar:0.1'
+    implementation 'com.firebaseui:firebase-ui-auth:6.2.0'
+    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
 }

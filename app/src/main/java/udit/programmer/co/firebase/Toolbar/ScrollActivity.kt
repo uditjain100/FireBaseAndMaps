@@ -6,15 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_curved_bottom.*
+import com.trendyol.bubblescrollbarlib.BubbleTextProvider
+import kotlinx.android.synthetic.main.activity_scroll.*
 import udit.programmer.co.firebase.Adapter.MovieAdapter
 import udit.programmer.co.firebase.Adapter.MovieOnItemClickListener
 import udit.programmer.co.firebase.Adapter.Movies
 import udit.programmer.co.firebase.R
 
-class CurvedBottomActivity : AppCompatActivity() {
+class ScrollActivity : AppCompatActivity() {
 
-    val moviesn = arrayOf(
+    private val moviesn = arrayOf(
         "Superman and the Mole Men",
         "Stamp Day for Superman",
         "Batman",
@@ -48,7 +49,7 @@ class CurvedBottomActivity : AppCompatActivity() {
         "Shazam",
         "Joker"
     )
-    val years = arrayOf(
+    private val years = arrayOf(
         "1951", "1954", "1966", "1978",
         "1980", "1982", "1983", "1984",
         "1987", "1989", "1989", "1992",
@@ -58,7 +59,7 @@ class CurvedBottomActivity : AppCompatActivity() {
         "2013", "2016", "2016", "2017",
         "2017", "2018", "2019", "2019"
     )
-    val images = arrayOf(
+    private val images = arrayOf(
         R.drawable.supermanmolemen,
         R.drawable.stampday,
         R.drawable.batman,
@@ -92,7 +93,7 @@ class CurvedBottomActivity : AppCompatActivity() {
         R.drawable.shazam,
         R.drawable.jokar
     )
-    val links = arrayOf(
+    private val links = arrayOf(
         "en.wikipedia.org/wiki/Superman_and_the_Mole_Men",
         "en.wikipedia.org/wiki/Stamp_Day_for_Superman",
         "en.wikipedia.org/wiki/Batman_(1966_film)",
@@ -127,7 +128,7 @@ class CurvedBottomActivity : AppCompatActivity() {
         "en.wikipedia.org/wiki/Joker_(2019_film)"
 
     )
-    val posi = arrayOf(
+    private val posit = arrayOf(
         0, 1, 2, 3,
         4, 5, 6, 7,
         8, 9, 10, 11,
@@ -142,11 +143,13 @@ class CurvedBottomActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_curved_bottom)
+        setContentView(R.layout.activity_scroll)
 
         for (i in 0..31) {
-            list.add(Movies(moviesn[i], years[i], images[i], links[i], posi[i]))
+            list.add(Movies(moviesn[i], years[i], images[i], links[i], posit[i]))
         }
+
+        rv_lay.setHasFixedSize(true)
         rv_lay.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         val na = MovieAdapter(list)
         na.onItemClickListener = object : MovieOnItemClickListener {
@@ -156,5 +159,11 @@ class CurvedBottomActivity : AppCompatActivity() {
             }
         }
         rv_lay.adapter = na
+
+        bubble_scroll_bar.attachToRecyclerView(rv_lay)
+        bubble_scroll_bar.bubbleTextProvider = BubbleTextProvider {
+            posit[it].toString()
+        }
+
     }
 }

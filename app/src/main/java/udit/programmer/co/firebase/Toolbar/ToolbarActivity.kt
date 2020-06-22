@@ -26,27 +26,32 @@ class ToolbarActivity : AppCompatActivity() {
             }
         }
 
-        activity_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(
-                    Intent(
-                        this@ToolbarActivity,
-                        CollapsingToolbarActivity::class.java
-                    )
+        activity_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@ToolbarActivity,
+                    CollapsingToolbarActivity::class.java
                 )
-            }
-        })
+            )
+        }
 
-        btm_btn.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                startActivity(
-                    Intent(
-                        this@ToolbarActivity,
-                        BottomActivity::class.java
-                    )
+        btm_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@ToolbarActivity,
+                    BottomActivity::class.java
                 )
-            }
-        })
+            )
+        }
+
+        scroll_btn.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@ToolbarActivity,
+                    ScrollActivity::class.java
+                )
+            )
+        }
 
     }
 }

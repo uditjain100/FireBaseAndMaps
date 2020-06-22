@@ -15,6 +15,13 @@
         android:text="FireBase" />
 
     <Button
+        android:id="@+id/sign_in_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="FireBase" />
+
+    <Button
         android:id="@+id/google_map_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -48,13 +55,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Room" />
-
-    <Button
-        android:id="@+id/camera_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Camera" />
 
     <Button
         android:id="@+id/worker_btn"
@@ -112,15 +112,13 @@
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/firebase_storage_btn"
+        android:id="@+id/phone_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="@color/Brown"
-        android:text="Fire Store"
-        android:textAllCaps="true"
+        android:text="Phone"
         app:cornerRadius="25dp"
         app:rippleColor="@color/BlueViolet" />
-
 
 </LinearLayout>
