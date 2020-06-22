@@ -35,9 +35,8 @@
         android:roundIcon="@drawable/ic_baseline_tag_faces_24"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FireBase.SignInActivity"></activity>
-        <activity android:name=".FireBase.AuthenticatedActivity" />
-        <activity android:name=".FireBase.PhoneActivity" />
+        <activity android:name=".FireBase.SpinnerActivity"></activity>
+        <activity android:name=".FireBase.SignInActivity" />
         <activity android:name=".Search.SearchActivity" />
         <activity
             android:name=".Toolbar.BottomActivity"

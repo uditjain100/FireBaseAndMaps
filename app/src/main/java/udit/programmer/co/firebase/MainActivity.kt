@@ -4,9 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
-import udit.programmer.co.firebase.FireBase.AuthenticatedActivity
 import udit.programmer.co.firebase.FireBase.FireBaseActivity
 import udit.programmer.co.firebase.FireBase.SignInActivity
+import udit.programmer.co.firebase.FireBase.SpinnerActivity
 import udit.programmer.co.firebase.Fragments.Fragmentactivity
 import udit.programmer.co.firebase.Layout.LayoutActivity
 import udit.programmer.co.firebase.MVVM.ui.view.MVVM_Activity
@@ -29,8 +29,8 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this@MainActivity, SignInActivity::class.java))
         }
 
-        phone_btn.setOnClickListener {
-            startActivity(Intent(this@MainActivity, AuthenticatedActivity::class.java))
+        spinner_btn.setOnClickListener {
+            startActivity(Intent(this@MainActivity, SpinnerActivity::class.java))
         }
 
         search_btn.setOnClickListener {
