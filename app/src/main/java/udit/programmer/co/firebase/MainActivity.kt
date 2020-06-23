@@ -8,6 +8,7 @@ import udit.programmer.co.firebase.FireBase.FireBaseActivity
 import udit.programmer.co.firebase.FireBase.SignInActivity
 import udit.programmer.co.firebase.FireBase.SpinnerActivity
 import udit.programmer.co.firebase.Fragments.Fragmentactivity
+import udit.programmer.co.firebase.JetPack.DataBindingActivity
 import udit.programmer.co.firebase.Layout.LayoutActivity
 import udit.programmer.co.firebase.MVVM.ui.view.MVVM_Activity
 import udit.programmer.co.firebase.Maps.MapsActivity
@@ -24,6 +25,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        //AutoSizing Text Work should be used over API level 26
+
+        jetpack_btn.setOnClickListener {
+            startActivity(Intent(this@MainActivity, DataBindingActivity::class.java))
+        }
 
         sign_in_btn.setOnClickListener {
             startActivity(Intent(this@MainActivity, SignInActivity::class.java))
