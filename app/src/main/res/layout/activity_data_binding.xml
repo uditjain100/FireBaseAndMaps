@@ -32,7 +32,7 @@
         android:textStyle="bold"
         app:cornerRadius="20dp" />
 
-    <EditText
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

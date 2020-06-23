@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 29
 
@@ -44,6 +45,8 @@ dependencies {
     compileOnly 'com.google.android.wearable:wearable:2.7.0'
     def lifecycle_version = "2.2.0"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     def work_version = "2.3.4"
     implementation "androidx.work:work-runtime-ktx:$work_version"
     def camerax_version = "1.0.0-alpha01"

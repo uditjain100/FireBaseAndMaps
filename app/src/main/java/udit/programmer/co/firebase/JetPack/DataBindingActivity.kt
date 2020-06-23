@@ -17,10 +17,14 @@ class DataBindingActivity : AppCompatActivity() {
 
 //        Below 2 lines code is used to add view binding features in this activity
 
-        val binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+//        val binding = ActivityMainBinding.inflate(layoutInflater)
+//        setContentView(binding.root)
 
+        setContentView(R.layout.activity_data_binding)
         super.onCreate(savedInstanceState)
+
+        lifecycle.addObserver(MainActivityObserver())
+
         tvv.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
 
