@@ -10,17 +10,14 @@
     <EditText
         android:id="@+id/tvv"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="wrap_content"
         android:layout_above="@id/btn_click"
         android:layout_centerInParent="true"
         android:layout_margin="20dp"
-        android:autoSizeMaxTextSize="40dp"
-        android:autoSizeMinTextSize="15dp"
-        android:autoSizeStepGranularity="2sp"
-        android:autoSizeTextType="uniform"
-        android:text="Enter Here"
+        android:hint="Enter Here"
         android:textAlignment="center"
         android:textColor="@color/Black"
+        android:textSize="20dp"
         android:textStyle="bold" />
 
     <com.google.android.material.button.MaterialButton
@@ -34,5 +31,18 @@
         android:textColor="@color/Black"
         android:textStyle="bold"
         app:cornerRadius="20dp" />
+
+    <EditText
+        android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_click"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        android:text="Show Here"
+        android:textAlignment="center"
+        android:textColor="@color/Black"
+        android:textStyle="bold" />
+
 
 </RelativeLayout>

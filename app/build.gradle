@@ -5,6 +5,10 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion 29
+
+    buildFeatures{
+        viewBinding=true
+    }
     buildToolsVersion '29.0.1'
     defaultConfig {
         applicationId "udit.programmer.co.firebase"
